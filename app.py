@@ -216,7 +216,7 @@ for message in st.session_state.messages:
 # Initialize components (cached)
 @st.cache_resource
 def get_components():
-    return initialize_llm_components(api_key)
+    return initialize_llm_components(api_key=google_api_key)
 
 components = get_components()
 
