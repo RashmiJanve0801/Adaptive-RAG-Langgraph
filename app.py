@@ -14,7 +14,7 @@ from src.LLMs.geminillm import initialize_llm_components
 from src.Graphs.graph_builder import build_graph
 
 # Set page config
-st.set_page_config(page_title="Adaptive RAG System", page_icon="🤖", layout="wide")
+st.set_page_config(page_title="AI Adaptive RAG System", page_icon="🤖", layout="wide")
 
 # Load environment variables
 load_dotenv()
