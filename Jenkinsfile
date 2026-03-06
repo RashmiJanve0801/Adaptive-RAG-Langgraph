@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_HUB_REPO = "rashmijanve/dsa-solver"    
+        DOCKER_HUB_REPO = "rashmijanve/adaptive-rag"    
         DOCKER_HUB_CREDENTIALS_ID = "dockerhub-token"
         IMAGE_TAG = "v${BUILD_NUMBER}"
     }
@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout Github') {
             steps {
                 echo 'Checking out code from GitHub...'
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-token', url: 'https://github.com/RashmiJanve0801/DSA-Solver.git']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-token', url: 'https://github.com/RashmiJanve0801/Adaptive-RAG-Langgraph.git']])
             }
         }
 
@@ -39,7 +39,7 @@ pipeline {
         steps {
             script {
                 sh """
-                sed -i 's|image: rashmijanve/dsa-solver:.*|image: rashmijanve/dsa-solver:${IMAGE_TAG}|' manifests/deployment.yaml
+                sed -i 's|image: rashmijanve/adaptive-rag:.*|image: rashmijanve/adaptive-rag:${IMAGE_TAG}|' manifests/deployment.yaml
                 """
             }
         }
@@ -60,7 +60,7 @@ pipeline {
                     git config user.email "rashmijanve0801@gmail.com"
                     git add manifests/deployment.yaml
                     git commit -m "Update image tag to ${IMAGE_TAG}" || echo "No changes to commit"
-                    git push https://${GIT_USER}:${GIT_PASS}@github.com/RashmiJanve0801/DSA-Solver.git HEAD:main
+                    git push https://${GIT_USER}:${GIT_PASS}@github.com/RashmiJanve0801/Adaptive-RAG-Langgraph.git HEAD:main
                     '''
 
                 }
@@ -89,7 +89,7 @@ pipeline {
                 sh '''
                     argocd login 136.113.127.253:31704 --username admin --password $(kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
 
-                    argocd app sync dsa-solver
+                    argocd app sync adaptive-rag
                         '''
         }
             }
