@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: llmops-app
-          image: rashmijanve/adaptive-rag:v6
+          image: rashmijanve/adaptive-rag:v8
           ports:
             - containerPort: 8501
