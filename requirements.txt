@@ -1,0 +1,17 @@
+langchain
+langgraph
+langchain_community
+langchain_core
+langchain_groq
+langchain_openai
+faiss-cpu
+streamlit
+tavily-python
+langchain_google_genai
+fastapi
+uvicorn
+watchdog
+langgraph-cli[inmem]
+langchain-text-splitters
+bs4
+langchainhub
