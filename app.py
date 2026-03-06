@@ -109,6 +109,7 @@ with st.sidebar:
         
         if google_api_key:
             os.environ["GOOGLE_API_KEY"] = google_api_key
+            api_key = google_api_key
         
         if tavily_api_key:
             os.environ["TAVILY_API_KEY"] = tavily_api_key
@@ -215,7 +216,7 @@ for message in st.session_state.messages:
 # Initialize components (cached)
 @st.cache_resource
 def get_components():
-    return initialize_llm_components()
+    return initialize_llm_components(api_key)
 
 components = get_components()
 

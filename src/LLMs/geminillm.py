@@ -3,11 +3,11 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from src.States.state import RouteQuery, GradeDocuments, GradeHallucinations, GradeAnswer
 
-def initialize_llm_components():
+def initialize_llm_components(api_key):
     """Initialize LLM and create all the chains needed for the RAG system"""
     
     # LLM
-    llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0)
+    llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", api_key=api_key, temperature=0)
     
     # Structured outputs
     structured_llm_router = llm.with_structured_output(RouteQuery)
