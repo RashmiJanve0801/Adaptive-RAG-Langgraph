@@ -1,9 +1,9 @@
 import streamlit as st
 from langchain_core.documents import Document
-from langchain_tavily import TavilySearch
+from langchain_community.tools.tavily_search import TavilySearchResults
 
 # Initialize web search tool
-web_search_tool = TavilySearch(k=3)
+web_search_tool = TavilySearchResults(k=3)
 
 def retrieve(state, components):
     """Retrieve documents from vector store"""
