@@ -61,24 +61,3 @@ full GitOps CI/CD pipeline:
 | Jenkins | CI pipeline (builds + tests) |
 | ArgoCD | CD pipeline (GitOps deployments) |
 
-
-## Project structure
-
-```
-adaptive-rag-langgraph/
-├── graph/
-│   ├── nodes.py        # retrieval, grading, generation, hallucination check
-│   ├── edges.py        # conditional routing logic
-│   └── workflow.py     # LangGraph graph assembly
-├── retriever/
-│   ├── vector_store.py # FAISS setup + document ingestion
-│   └── web_search.py   # Tavily integration
-├── k8s/                # GKE deployment manifests
-│   ├── deployment.yaml
-│   ├── service.yaml
-│   └── ingress.yaml
-├── Jenkinsfile         # CI pipeline definition
-├── app.py
-├── requirements.txt
-└── README.md
-```
