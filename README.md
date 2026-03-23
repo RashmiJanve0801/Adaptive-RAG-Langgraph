@@ -1,4 +1,4 @@
-# 🔍 Adaptive RAG System using LangGraph
+# Adaptive RAG System using LangGraph
 
 Most RAG systems are overconfident. They retrieve whatever's closest in 
 vector space, stuff it into a prompt, and generate an answer — even if 
@@ -24,9 +24,6 @@ The Streamlit UI shows every decision in real time — which path it took,
 why it rewrote the query, whether it flagged hallucination. 
 I added that for debugging and kept it because it's genuinely interesting.
 
-## Live Demo
-👉 [Try it here](your-demo-link-here)
-🔗 [GitHub](your-github-link-here)
 
 ## How the workflow runs
 
@@ -49,7 +46,7 @@ full GitOps CI/CD pipeline:
 - **ArgoCD** handles continuous delivery to GKE
 - Manual deploys used to take ~20 mins. Now it's under 5, automatically.
 
-## Stack
+## Tech Stack
 
 | What | Why |
 |---|---|
@@ -64,26 +61,6 @@ full GitOps CI/CD pipeline:
 | Jenkins | CI pipeline (builds + tests) |
 | ArgoCD | CD pipeline (GitOps deployments) |
 
-## Run locally
-
-```bash
-git clone https://github.com/rashmijanve/adaptive-rag-langgraph.git
-cd adaptive-rag-langgraph
-pip install -r requirements.txt
-```
-
-`.env`:
-```env
-GEMINI_API_KEY=your_key
-TAVILY_API_KEY=your_key
-```
-
-```bash
-streamlit run app.py
-```
-
-For the full Kubernetes setup, check the `/k8s` folder —
-all manifests are there with comments.
 
 ## Project structure
 
@@ -105,12 +82,3 @@ adaptive-rag-langgraph/
 ├── requirements.txt
 └── README.md
 ```
-
-## What I'd improve next
-
-- Swap FAISS for a managed vector DB (Pinecone or AstraDB) for scale
-- Add feedback loop — let users flag bad answers to improve retrieval
-- Experiment with reranking before generation
-
-## License
-MIT
