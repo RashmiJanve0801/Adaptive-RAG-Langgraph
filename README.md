@@ -48,16 +48,15 @@ full GitOps CI/CD pipeline:
 
 ## Tech Stack
 
-| What | Why |
+## Tech Stack
+
+| Layer | Technologies |
 |---|---|
-| LangGraph | Workflow orchestration + stateful graph |
-| LangChain | LLM tooling + prompt management |
-| Google Gemini | Generation + document grading |
-| FAISS | Local vector store |
-| Tavily | Web search fallback |
-| Streamlit | Frontend UI |
-| Docker | Containerized app |
-| GKE (Google Kubernetes Engine) | Cloud deployment |
-| Jenkins | CI pipeline (builds + tests) |
-| ArgoCD | CD pipeline (GitOps deployments) |
+| Agent Orchestration | LangGraph, LangChain |
+| LLM & Embeddings | Google Gemini Pro/Flash, FAISS |
+| Retrieval | FAISS (vector store), Tavily (web search) |
+| Frontend | Streamlit |
+| CI/CD | Jenkins, ArgoCD, GitHub Webhooks |
+| Infra | Docker, GKE (Google Kubernetes Engine), python-dotenv |
+
 
