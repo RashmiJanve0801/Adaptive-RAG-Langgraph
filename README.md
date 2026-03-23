@@ -57,6 +57,6 @@ full GitOps CI/CD pipeline:
 | Retrieval | FAISS (vector store), Tavily (web search) |
 | Frontend | Streamlit |
 | CI/CD | Jenkins, ArgoCD, GitHub Webhooks |
-| Infra | Docker, GKE (Google Kubernetes Engine), python-dotenv |
+| Infra | Docker, GKE (Google Kubernetes Engine) |
 
 
